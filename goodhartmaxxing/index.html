@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="A note on Goodhart's law and how it shows up in everyday optimization."><meta name="theme-color" content="#090909"><link rel="icon" type="image/png" href="/no-circles-logo.png"><link rel="apple-touch-icon" href="/no-circles-logo.png"><title>goodhartmaxxing | Naman Chetwani</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><vercel-analytics data-props="{}" data-params="{}" data-pathname="/goodhartmaxxing/"></vercel-analytics> <script type="module">var v=()=>{window.va||(window.va=function(...i){window.vaq||(window.vaq=[]),window.vaq.push(i)})},w="@vercel/analytics",h="2.0.1";function f(){return typeof window<"u"}function l(){try{const e="production"}catch{}return"production"}function m(e="auto"){if(e==="auto"){window.vam=l();return}window.vam=e}function y(){return(f()?window.vam:l())||"production"}function d(){return y()==="development"}function b(e,i){if(!e||!i)return e;let n=e;try{const t=Object.entries(i);for(const[r,s]of t)if(!Array.isArray(s)){const o=u(s);o.test(n)&&(n=n.replace(o,`/[${r}]`))}for(const[r,s]of t)if(Array.isArray(s)){const o=u(s.join("/"));o.test(n)&&(n=n.replace(o,`/[...${r}]`))}return n}catch{return e}}function u(e){return new RegExp(`/${g(e)}(?=[/?#]|$)`)}function g(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}function E(e){return e.scriptSrc?a(e.scriptSrc):d()?"https://va.vercel-scripts.com/v1/script.debug.js":e.basePath?a(`${e.basePath}/insights/script.js`):"/_vercel/insights/script.js"}function k(e,i){var n;let t=e;if(i)try{t={...(n=JSON.parse(i))==null?void 0:n.analytics,...e}}catch{}m(t.mode);const r={sdkn:w+(t.framework?`/${t.framework}`:""),sdkv:h};return t.disableAutoTrack&&(r.disableAutoTrack="1"),t.viewEndpoint&&(r.viewEndpoint=a(t.viewEndpoint)),t.eventEndpoint&&(r.eventEndpoint=a(t.eventEndpoint)),t.sessionEndpoint&&(r.sessionEndpoint=a(t.sessionEndpoint)),d()&&t.debug===!1&&(r.debug="false"),t.dsn&&(r.dsn=t.dsn),t.endpoint?r.endpoint=t.endpoint:t.basePath&&(r.endpoint=a(`${t.basePath}/insights`)),{beforeSend:t.beforeSend,src:E(t),dataset:r}}function a(e){return e.startsWith("http://")||e.startsWith("https://")||e.startsWith("/")?e:`/${e}`}function S(e={debug:!0},i){var n;if(!f())return;const{beforeSend:t,src:r,dataset:s}=k(e,i);if(v(),t&&((n=window.va)==null||n.call(window,"beforeSend",t)),document.head.querySelector(`script[src*="${r}"]`))return;const o=document.createElement("script");o.src=r;for(const[c,p]of Object.entries(s))o.dataset[c]=p;o.defer=!0,o.onerror=()=>{const c=d()?"Please check if any ad blockers are enabled and try again.":"Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";console.log(`[Vercel Web Analytics] Failed to load script from ${r}. ${c}`)},document.head.appendChild(o)}function $({route:e,path:i}){var n;(n=window.va)==null||n.call(window,"pageview",{route:e,path:i})}function A(){try{return}catch{}}function j(){try{return}catch{}}customElements.define("vercel-analytics",class extends HTMLElement{constructor(){super();try{const i=JSON.parse(this.dataset.props??"{}"),n=JSON.parse(this.dataset.params??"{}");S({...i,disableAutoTrack:!0,framework:"astro",basePath:A(),beforeSend:window.webAnalyticsBeforeSend},j());const t=this.dataset.pathname;$({route:b(t??"",n),path:t})}catch(i){throw new Error(`Failed to parse WebAnalytics properties: ${i}`)}}});</script><link rel="stylesheet" href="/_astro/about.C_LIwrSU.css">
+<style>.goodhartmaxxing-essay[data-astro-cid-gg4hu6vh]{width:min(100%,44rem)}
+</style><script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script></head> <body>  <main class="page" data-astro-cid-gg4hu6vh> <div class="page-top" data-astro-cid-gg4hu6vh> <nav class="top-nav" aria-label="Primary" data-astro-cid-gg4hu6vh> <a class="nav-link" href="/" data-echo="Naman Chetwani" data-astro-cid-gg4hu6vh>Naman Chetwani</a> <a class="nav-link" href="/about" data-echo="About" data-astro-cid-gg4hu6vh>About</a> <a class="nav-link" href="/things-ive-done" data-echo="Things I've Done" data-astro-cid-gg4hu6vh>Things I've Done</a> <a class="nav-link" href="/reading" data-echo="Reading" data-astro-cid-gg4hu6vh>Reading</a> <a class="nav-link" href="/wrdn" data-echo="wrdn" data-astro-cid-gg4hu6vh>wrdn</a> <a class="nav-link current" href="/goodhartmaxxing" data-echo="goodhartmaxxing" data-astro-cid-gg4hu6vh>goodhartmaxxing</a> </nav> </div> <article class="essay about-essay goodhartmaxxing-essay" data-astro-cid-gg4hu6vh> <h1 data-astro-cid-gg4hu6vh>goodhartmaxxing</h1> <p data-astro-cid-gg4hu6vh>
+Goodhart&apos;s law: &quot;When a measure becomes a target, it ceases to be a good
+        measure.&quot;
+</p> <p data-astro-cid-gg4hu6vh>
+A classic example is the Soviet nail factory, which, when rewarded for the number of
+        nails produced, manufactured millions of tiny, useless nails, then pivoted to heavy,
+        oversized nails when rewarded by weight.
+</p> <p data-astro-cid-gg4hu6vh>
+However, the extent to which Goodhart&apos;s law affects the world is tremendous. About
+        half of the world&apos;s problems can be characterized, at least in part, by Goodhart&apos;s
+        law.
+</p> <ol class="plain-list" data-astro-cid-gg4hu6vh> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Lying:</strong> If the target is possessing a set of characteristics, you
+          gravitate toward seeming like you possess those characteristics.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Greed:</strong> If the target is being important, in a capitalist society
+          where money is the core object of value, one will optimize for making money to feel
+          important.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Social media:</strong> If the target is meaningful human connection, and the
+          measure is engagement, platforms optimize for engagement.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Startup culture:</strong> If the target is building something valuable, and the
+          measure is valuation, founders optimize for valuation.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Motivated reasoning:</strong> If the goal is getting to a true answer, and the
+          metric is having a reasonable-feeling logic chain, one skips the logic, creates an
+          answer, and works on the logic chain after.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Procrastination:</strong> If the target is a good life, and the measure is how
+          good you feel right now, you optimize for present feeling.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Complexity hiding incompetence:</strong> If the target is effective governance
+          or management, and the measure is appearing to be in control, actors optimize for the
+          appearance of control, which is best achieved by increasing complexity.
+</li> <li data-astro-cid-gg4hu6vh> <strong data-astro-cid-gg4hu6vh>Fear:</strong> If the target is actual safety, and the measure is the felt sense
+          of threat elimination, security systems optimize for visible threat removal.
+</li> </ol> <p data-astro-cid-gg4hu6vh>
+AI models are a good example of this. They perform
+<a href="https://metr.org/blog/2025-06-05-recent-reward-hacking/" target="_blank" rel="noreferrer" data-astro-cid-gg4hu6vh>
+reward hacking
+</a>, where they strongly optimize for the score they can win.
+</p> <p data-astro-cid-gg4hu6vh>
+If you passively observe people around you, you will notice this in all kinds of ways.
+</p> </article> </main>  <div class="site-cursor__tail-layer" aria-hidden="true"> <span class="site-cursor__tail-dot"></span> <span class="site-cursor__tail-dot"></span> <span class="site-cursor__tail-dot"></span> <span class="site-cursor__tail-dot"></span> </div> <div class="site-cursor" aria-hidden="true"></div> <a class="site-discord" href="https://discordapp.com/users/904441943298310204" target="_blank" rel="noreferrer" aria-label="Discord profile"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M20.317 4.369A19.791 19.791 0 0 0 15.885 3c-.191.328-.404.769-.553 1.116a18.27 18.27 0 0 0-5.334 0A12.64 12.64 0 0 0 9.445 3a19.736 19.736 0 0 0-4.433 1.369C2.207 8.523 1.447 12.574 1.824 16.57a19.9 19.9 0 0 0 5.438 2.756c.433-.591.818-1.216 1.148-1.87a12.977 12.977 0 0 1-1.808-.871c.152-.112.301-.23.445-.352 3.487 1.637 7.273 1.637 10.72 0 .146.122.294.24.446.352a12.94 12.94 0 0 1-1.81.872c.33.652.714 1.277 1.148 1.868a19.86 19.86 0 0 0 5.44-2.755c.442-4.632-.757-8.646-3.676-12.201ZM9.349 14.11c-1.045 0-1.9-.95-1.9-2.119 0-1.17.84-2.12 1.9-2.12 1.068 0 1.915.96 1.9 2.12 0 1.169-.847 2.119-1.9 2.119Zm5.302 0c-1.045 0-1.9-.95-1.9-2.119 0-1.17.84-2.12 1.9-2.12 1.068 0 1.915.96 1.9 2.12 0 1.169-.832 2.119-1.9 2.119Z" fill="currentColor"></path> </svg> <span>discord</span> </a> <a class="site-phone" href="tel:+19258959674" aria-label="Call +1 925 895 9674"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.02Z" fill="currentColor"></path> </svg> <span>+1 925 895 9674</span> </a> <a class="site-github" href="https://github.com/coder-2011" target="_blank" rel="noreferrer" aria-label="coder-2011 on GitHub"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.91-2.78.62-3.37-1.21-3.37-1.21-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.09 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.96-2.34 4.83-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" fill="currentColor"></path> </svg> <span>github.com/coder-2011</span> </a> <script>
+      (() => {
+        const INTERACTIVE_SELECTOR =
+          "a, button, input, textarea, select, label, summary, [role='button']";
+        const PROXIMITY_SELECTOR = ".top-nav .nav-link";
+        const FLOATING_LINK_SELECTOR = ".site-github, .site-phone, .site-discord";
+        const cursor = document.querySelector(".site-cursor");
+        const tailLayer = document.querySelector(".site-cursor__tail-layer");
+        const tailDots = Array.from(
+          document.querySelectorAll(".site-cursor__tail-dot")
+        );
+        const proximityLinks = Array.from(document.querySelectorAll(PROXIMITY_SELECTOR));
+        const floatingLinks = Array.from(
+          document.querySelectorAll(FLOATING_LINK_SELECTOR)
+        );
+
+        if (!(cursor instanceof HTMLDivElement) || !(tailLayer instanceof HTMLDivElement)) {
+          return;
+        }
+
+        const pointerMediaQuery = window.matchMedia("(pointer: fine) and (hover: hover)");
+        const motionMediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const trail = tailDots.map(() => ({ x: -999, y: -999 }));
+
+        let pointerEffectsEnabled = false;
+        let prefersReducedMotion = motionMediaQuery.matches;
+        let visible = false;
+        let cursorX = -999;
+        let cursorY = -999;
+        let targetX = -999;
+        let targetY = -999;
+        let frameId = 0;
+
+        const setEnabledState = () => {
+          pointerEffectsEnabled = pointerMediaQuery.matches;
+          prefersReducedMotion = motionMediaQuery.matches;
+          document.body.classList.toggle("site-cursor-active", pointerEffectsEnabled);
+          tailLayer.style.display =
+            pointerEffectsEnabled && !prefersReducedMotion ? "block" : "none";
+
+          if (!pointerEffectsEnabled) {
+            visible = false;
+            cursor.style.opacity = "0";
+            tailDots.forEach((dot) => {
+              dot.style.opacity = "0";
+            });
+          }
+        };
+
+        const distanceToRect = (x, y, rect) => {
+          const dx = Math.max(rect.left - x, 0, x - rect.right);
+          const dy = Math.max(rect.top - y, 0, y - rect.bottom);
+          return Math.hypot(dx, dy);
+        };
+
+        const updatePointerState = (target) => {
+          const isPointer = target instanceof Element && target.closest(INTERACTIVE_SELECTOR);
+          cursor.classList.toggle("site-cursor--pointer", Boolean(isPointer));
+        };
+
+        const handleMouseMove = (event) => {
+          if (!pointerEffectsEnabled) {
+            return;
+          }
+
+          targetX = event.clientX;
+          targetY = event.clientY;
+          visible = true;
+          updatePointerState(event.target);
+
+          proximityLinks.forEach((link) => {
+            if (!(link instanceof HTMLElement)) {
+              return;
+            }
+
+            const rect = link.getBoundingClientRect();
+            const distance = distanceToRect(event.clientX, event.clientY, rect);
+
+            link.classList.toggle("nav-link-near", distance < 34);
+          });
+
+          floatingLinks.forEach((link) => {
+            if (!(link instanceof HTMLElement)) {
+              return;
+            }
+
+            const rect = link.getBoundingClientRect();
+            const distance = distanceToRect(event.clientX, event.clientY, rect);
+
+            link.classList.toggle("site-floating-link-near", distance < 36);
+          });
+        };
+
+        const handleMouseLeave = () => {
+          visible = false;
+          cursor.classList.remove("site-cursor--pointer");
+          proximityLinks.forEach((link) => {
+            if (link instanceof HTMLElement) {
+              link.classList.remove("nav-link-near");
+            }
+          });
+          floatingLinks.forEach((link) => {
+            if (link instanceof HTMLElement) {
+              link.classList.remove("site-floating-link-near");
+            }
+          });
+        };
+
+        const render = () => {
+          cursorX += (targetX - cursorX) * 0.28;
+          cursorY += (targetY - cursorY) * 0.28;
+          cursor.style.opacity = pointerEffectsEnabled && visible ? "1" : "0";
+          cursor.style.transform =
+            "translate3d(" +
+            cursorX +
+            "px, " +
+            cursorY +
+            "px, 0) translate(-50%, -50%)";
+
+          if (pointerEffectsEnabled && !prefersReducedMotion) {
+            for (let index = 0; index < trail.length; index += 1) {
+              const point = trail[index];
+              const leader = index === 0 ? { x: targetX, y: targetY } : trail[index - 1];
+              const easing = index === 0 ? 0.3 : 0.23;
+              const dot = tailDots[index];
+              const opacity = visible ? Math.max(0, 0.66 - index * 0.065) : 0;
+              const scale = 1 - index * 0.08;
+              const rotation = 45 + index * 7;
+
+              point.x += (leader.x - point.x) * easing;
+              point.y += (leader.y - point.y) * easing;
+
+              dot.style.opacity = String(opacity);
+              dot.style.transform =
+                "translate3d(" +
+                (point.x - 7) +
+                "px, " +
+                (point.y - 7) +
+                "px, 0) rotate(" +
+                rotation +
+                "deg) scale(" +
+                scale +
+                ")";
+            }
+          }
+
+          frameId = window.requestAnimationFrame(render);
+        };
+
+        setEnabledState();
+        pointerMediaQuery.addEventListener("change", setEnabledState);
+        motionMediaQuery.addEventListener("change", setEnabledState);
+        window.addEventListener("mousemove", handleMouseMove, { passive: true });
+        window.addEventListener("mouseleave", handleMouseLeave, { passive: true });
+        frameId = window.requestAnimationFrame(render);
+
+        window.addEventListener(
+          "pagehide",
+          () => {
+            window.cancelAnimationFrame(frameId);
+            pointerMediaQuery.removeEventListener("change", setEnabledState);
+            motionMediaQuery.removeEventListener("change", setEnabledState);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseleave", handleMouseLeave);
+            document.body.classList.remove("site-cursor-active");
+          },
+          { once: true }
+        );
+      })();
+    </script> </body> </html> 
